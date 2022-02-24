@@ -1,0 +1,17 @@
+{#-----------------------------Variant 1 Simple tag------------------------#}
+{% load news_tags %}
+{% comment %}
+<div class="list-group">
+    {% get_list_categories as categories%}
+    {% for item in categories %}
+        <a href="{% url 'category' item.pk %}" class="list-group-item list-group-item-action"
+           aria-current="true">
+            {{ item.title }}
+        </a>
+    {% endfor %}
+</div>
+
+<br>
+{%  endcomment %}
+{#-----------------------------Variant 2 Inclusion tag------------------------#}
+{%  show_categories %}
